@@ -1,0 +1,11 @@
+transaction_id,occurred_at,description,merchant,amount,currency,direction,status,category,payment_method,fee,recurring,recurrence_interval,notes,source
+txn_demo_001,2026-08-01T08:30:00+02:00,CloudBox Monthly Plan,CloudBox,9.99,EUR,debit,completed,software,card,0.00,true,monthly,,sample
+txn_demo_002,2026-08-02T13:10:00+02:00,Local Market,Local Market,42.70,EUR,debit,completed,groceries,card,0.00,false,,,sample
+txn_demo_003,2026-08-03T09:00:00+02:00,Client Invoice August,Demo Client,850.00,EUR,credit,completed,income,bank_transfer,0.00,false,,Synthetic income fixture,sample
+txn_demo_004,2026-08-05T18:45:00+02:00,Metro Pass,City Transit,35.00,EUR,debit,completed,transport,wallet,0.00,true,monthly,,sample
+txn_demo_005,2026-08-07T21:15:00+02:00,StreamWave Subscription,StreamWave,12.99,EUR,debit,completed,entertainment,card,0.00,true,monthly,,sample
+txn_demo_006,2026-08-10T11:25:00+02:00,Online Course,LearnLab,79.00,EUR,debit,pending,education,card,0.00,false,,,sample
+txn_demo_007,2026-08-12T16:20:00+02:00,International Service,Demo Services Ltd,25.00,EUR,debit,completed,services,card,0.75,false,,Includes a synthetic fee,sample
+txn_demo_008,2026-08-15T10:05:00+02:00,Returned Item Refund,Local Market,18.50,EUR,credit,refunded,groceries,card,0.00,false,,,sample
+txn_demo_009,2026-08-20T07:40:00+02:00,Fitness Club,Fitness Club,29.90,EUR,debit,completed,health,bank_transfer,0.00,true,monthly,,sample
+txn_demo_010,2026-08-25T14:55:00+02:00,Utility Payment,Demo Energy,64.30,EUR,debit,failed,utilities,bank_transfer,0.00,false,,Synthetic failed payment,sample
