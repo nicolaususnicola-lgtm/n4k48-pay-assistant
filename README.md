@@ -45,7 +45,7 @@ These figures describe only the included sample fixture.
 
 The repository includes `compose.yaml` and the static web files. The deployed VPS instance was previously confirmed to serve the page with HTTP 200 from its local port, using the `nginx:stable-alpine` container. The VPS port was bound to `127.0.0.1:8080`, so that binding alone does not make it publicly accessible.
 
-The current transaction-summary fix is on the branch `fix/transaction-status-currency-summary` and is proposed in [Pull Request #1](https://github.com/nicolaususnicola-lgtm/n4k48-pay-assistant/pull/1). **This branch change has not yet been deployed to the running VPS container.** Check the PR and deployment status before assuming the live page includes these changes.
+The transaction-summary fix and this documentation were merged into `main` via [Pull Request #1](https://github.com/nicolaususnicola-lgtm/n4k48-pay-assistant/pull/1) (squash commit `071946f`). GitHub source and VPS deployment are separate: the VPS checkout/container version has not been reverified after the merge. The Docker setup previously used a bind mount, so edits to files in the mounted VPS directory can affect the served page without a container rebuild.
 
 For a local instance, from the repository directory:
 
@@ -60,6 +60,23 @@ docker compose ps
 ```
 
 Follow the local `compose.yaml` for the actual port mapping and deployment configuration.
+
+## Public demo and GitHub Pages
+
+A GitHub Actions workflow for publishing the static prototype is available at [`.github/workflows/pages.yml`](.github/workflows/pages.yml) (added in commit `22e4ae1`). In the repository **Settings → Pages**, select **GitHub Actions** as the build and deployment source. Check the [Actions runs](https://github.com/nicolaususnicola-lgtm/n4k48-pay-assistant/actions) for a successful `Deploy static demo to GitHub Pages` job and confirm the URL shown by GitHub before sharing it publicly.
+
+Expected URL after a successful deployment: https://nicolaususnicola-lgtm.github.io/n4k48-pay-assistant/ — **publication and reachability have not yet been independently verified**.
+
+Use the included synthetic CSV to demonstrate the prototype. Do not upload credentials or sensitive banking data. The static demo performs CSV processing in the browser and is not a live payment service.
+
+## Who it is for
+
+- **Freelancers and sole traders:** review imported transactions and distinguish completed, pending, and failed records.
+- **Small businesses:** inspect exported CSV data as an informational overview, not as accounting or reconciliation software.
+- **Individuals:** explore spending and CSV-marked recurring transactions with synthetic or non-sensitive test data.
+- **Developers and early testers:** evaluate the interface, report parsing problems, and propose improvements.
+
+These audiences are hypotheses for user testing, not evidence of established product-market fit.
 
 ## Current limitations and next steps
 
